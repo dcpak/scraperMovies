@@ -26,14 +26,14 @@ DIR_CACHE_MOVIE = 'cache/movie/'
 FILE_OUTPUT_TPL = 'template.html'
 FILE_OUTPUT = 'movies_information.html'
 
-MAX_COUNTER = 100
+MAX_COUNTER = 0
 
 counter = 0
 content_file = ''
 for _, dirs, _ in os.walk(DIR_INPUT):
     if dirs:
         for _dir in dirs:
-            if counter < MAX_COUNTER:
+            if MAX_COUNTER == 0 or counter < MAX_COUNTER:
                 counter += 1
                 name_movie = re.sub('(^ +)|( +$)',
                                     '',
